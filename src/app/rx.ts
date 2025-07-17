@@ -1,7 +1,7 @@
 import { Rx } from "@effect-rx/rx";
 import { Effect, Schema } from "effect";
 
-export const countRx = Rx.make(0);
+export const countRx = Rx.make(0).pipe(Rx.withLabel("countRx"));
 
 export const testRx = Rx.make(
   Effect.gen(function* () {
@@ -12,4 +12,4 @@ export const testRx = Rx.make(
       test: Date.now(),
     };
   })
-).pipe(Rx.serializable(Schema.Number));
+).pipe(Rx.serializable(Schema.Number), Rx.withLabel("testRx"));
