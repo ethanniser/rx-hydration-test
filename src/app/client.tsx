@@ -1,6 +1,5 @@
 "use client";
-import { Rx, useRx, useRxValue } from "@effect-rx/rx-react";
-import { Effect, Schema } from "effect";
+import { useRx, useRxValue } from "@effect-rx/rx-react";
 import { countRx, testRx } from "./rx";
 
 export function Client() {

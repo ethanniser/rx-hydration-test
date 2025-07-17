@@ -1,4 +1,4 @@
-import { Rx } from "@effect-rx/rx-react";
+import { Rx } from "@effect-rx/rx";
 import { Effect, Schema } from "effect";
 
 export const countRx = Rx.make(0);

@@ -1,6 +1,7 @@
 import { Client } from "./client";
 import { testRx } from "./rx";
-import { HydrationBoundary, Registry } from "@effect-rx/rx-react";
+import { HydrationBoundary } from "@effect-rx/rx-react";
+import { Registry } from "@effect-rx/rx";
 
 export default function App() {
   const registry = Registry.make();
