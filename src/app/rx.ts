@@ -1,5 +1,5 @@
 import { Rx } from "@effect-rx/rx-react";
-import { Effect } from "effect";
+import { Effect, Schema } from "effect";
 
 export const countRx = Rx.make(0);
 
@@ -12,5 +12,4 @@ export const testRx = Rx.make(
       test: Date.now(),
     };
   })
-);
-// ).pipe(Rx.serializable(Schema.Number));
+).pipe(Rx.serializable(Schema.Number));
