@@ -1,4 +1,4 @@
-import { Rx } from "@effect-rx/rx";
+import { Result, Rx } from "@effect-rx/rx";
 import { Effect, Schema } from "effect";
 
 export const countRx = Rx.make(0).pipe(Rx.withLabel("countRx"));
@@ -11,5 +11,15 @@ export const testRx = Rx.make(
     return {
       test: Date.now(),
     };
-  })
-).pipe(Rx.serializable(Schema.Number), Rx.withLabel("testRx"));
+  }),
+).pipe(
+  Rx.serializable({
+    key: "testRx",
+    schema: Result.Schema({
+      success: Schema.Struct({
+        test: Schema.Number,
+      }),
+    }),
+  }),
+  Rx.withLabel("testRx"),
+);
